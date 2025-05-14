@@ -1,0 +1,57 @@
+<瀏覽器形成url，發到後端>
+<檔案上傳用post>
+<key word:get跟potst之間的差別及實際應用場景>
+<meta charset='UTF-8' />
+<!-- 1. 編碼設定:
+這行告訴瀏覽器：「這個網頁的文字用 UTF-8 編碼來顯示。」
+UTF-8 是一種支援多語言的編碼方式，確保中文（像「打電腦」「打籃球」）不會變成亂碼。 -->
+<form action='Ivan07' method="get">
+<!--這是開啟一個「表單」，就像一張問卷，讓用戶填資料，然後送給後端處理。
+action='Ivan07'：告訴瀏覽器，
+表單送出去後，要去找 /Ivan07 這個地址，
+也就是 Ivan07 Servlet（因為它有 @WebServlet("/Ivan07")）。
+method="get"：說這張問卷要用 GET 方法送出，意思是資料會黏在網址（URL）後面，
+像一串問題清單。-->
+	Account: <input name="account" /><br/>
+<!--這是一個文字輸入框，讓用戶填「帳號」。
+Account: 是標籤，告訴用戶這欄是幹嘛的（就像問卷上的「請填帳號」）。
+<input name="account" /> 
+是輸入框，name="account" 給這欄取名叫 account，後端會用這個名字來找資料。-->
+	Password: <input type="password" name="passwd" /><br/>
+<!--這是一個密碼輸入框，讓用戶填「密碼」。
+type="password" 讓輸入的文字變成小圓點（●●●），保護隱私，別人看不到你打什麼。
+name="passwd" 給這欄取名叫 passwd，後端會用這個名字找資料。-->
+	Gender:
+		<input type="radio" name="gender" value="m" checked/>Male
+		<input type="radio" name="gender" value="f" />Female<br />
+<!--這是兩個「單選框」，讓用戶選「性別」（男或女）。
+type="radio" 表示這是單選，只能選一個選項。
+name="gender" 把這兩個選項綁在一起，確保只能選一個，後端會用 gender 找值。
+value="m" 和 value="f" 分別代表「男」和「女」的資料值。
+checked 表示「男」預設被選中，如果用戶沒改，表單會送 gender=m。-->		
+	Habits:
+		<input type="checkbox" name="habits" value="1" />打電腦
+		<input type="checkbox" name="habits" value="2" />打籃球
+		<input type="checkbox" name="habits" value="3" />打電玩<br />
+		<input type="checkbox" name="habits" value="4" />打麻將
+		<input type="checkbox" name="habits" value="5" />打毛線
+		<input type="checkbox" name="habits" value="6" />打小孩<br />
+<!--這是一堆「複選框」，讓用戶選「興趣」，可以選多個（或不選）。
+type="checkbox" 表示這是複選框，每個都可以勾或不勾。
+name="habits" 把所有興趣綁在一起，後端會用 habits 找所有勾選的值。
+value="1" 到 value="6" 是每個選項的資料值，對應不同興趣（比如 1 是「打電腦」）。
+顯示的文字（像「打電腦」「打籃球」）是給用戶看的，送出去的資料是 value 的值（1、2 等）。-->	
+	Birthday: <input type="date" name="birthday" /><br />
+<!--這是一個日期輸入框，讓用戶選「生日」。
+type="date" 會顯示一個日期選擇器（像日曆），方便用戶挑日期。
+name="birthday" 給這欄取名叫 birthday，後端可以用這個名字找資料。-->
+	<input type="submit" value="Register" />
+
+<!--這是一個「送出」按鈕，顯示為「Register」（註冊）。
+type="submit" 表示這是表單的提交按鈕，點下去會把表單所有資料送出去。
+
+用戶填完表單，點這個按鈕，瀏覽器會把資料包起來，送到 Ivan07。
+
+按下按鈕後，瀏覽器用 GET 方法把資料加到 URL，發給 Ivan Servlet 的 doGet 方法，
+然後轉到 doPost 處理。-->
+</form>
