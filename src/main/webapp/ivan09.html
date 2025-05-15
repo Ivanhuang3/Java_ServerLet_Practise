@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<meta charset="UTF-8">
+</這是告訴瀏覽器「嘿，這是一個 HTML5 網頁」，
+就像給文件貼個標籤說「我是最新款的網頁格式」。
+網頁用 UTF-8 編碼，能顯示中文、英文和其他語言的文字，不會出現亂碼。
+就像告訴瀏覽器「我要用萬國語言包！」/ >
+<form action ='ivan09' method="post"
+	enctype="multipart/form-data">
+	<input type ="file" name="upload">
+	<input type='submit' value='Upload'/>	
+<form 這是個表單，就像餐廳的點單表，
+讓使用者填東西（這裡是選檔案）。
+action='ivan09'：這是告訴瀏覽器「把表單送去哪裡」
+這裡寫 ivan09，應該是指送給一個叫 ivan09 的伺服器程式。>
+
+<post（送資料）或 get（拿資料）。因為上傳檔案通常用 POST，
+這裡可能是想寫 method="post"。這就像說「用什麼郵寄方式送包裹」>
+
+<enctype="mulitipart/form-data"：
+這是說「我要送檔案，所以用特殊的包裹方式」。
+這告訴伺服器「裡面有大包裹（檔案），小心處理！」
+這是上傳檔案必備的設定，跟 ivan09 的 @MultipartConfig 搭配。>
+
+<input type="file" name="upload"：
+這是一個「選檔案」的按鈕，點下去會跳出檔案選擇窗口，
+讓你挑電腦裡的檔案（像照片或文件）。
+name="upload" 是給這個檔案取個名字，
+叫 upload，這樣伺服器（Ivan09）收到時知道這是「upload 包裹」。
+這就像點單表上寫「我要送一個叫 upload 的包裹」。/>
+<input type='submit' value='Upload'：
+這是一個「送出」按鈕，上面寫著「Upload」（上傳）。
+點下去就把選好的檔案送出去。這就像按下「確認送單」的按鈕，
+告訴瀏覽器「快把包裹寄出去！」/>
+</form>
